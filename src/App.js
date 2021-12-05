@@ -7,7 +7,6 @@ import Post from "./Post";
 import CreatePostForm from "./CreatePostForm";
 import EditPostForm from "./EditPostForm";
 
-import "bootstrap/dist/css/bootstrap.css";
 import "react-toastify/dist/ReactToastify.css";
 import "./styles.css";
 
