@@ -53,7 +53,7 @@ export default class EditPostForm extends React.Component {
 
     componentDidMount() {
         const id = this.props.match.params.postId;
-        fetch(`https://json-server-posts-api.herokuapp.com/api/posts/${id}`)
+        fetch(`https://itp-404-final-project-api.herokuapp.com/api/posts/${id}`)
             .then((response) => {
                 return response.json();
             })

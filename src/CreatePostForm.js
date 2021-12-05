@@ -26,7 +26,7 @@ export default class CreatePostForm extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
 
-        fetch("https://json-server-posts-api.herokuapp.com/api/posts", {
+        fetch("https://itp-404-final-project-api.herokuapp.com/api/posts", {
             method: "POST",
             body: JSON.stringify({
                 title: this.state.title,

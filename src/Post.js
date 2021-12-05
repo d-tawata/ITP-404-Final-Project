@@ -32,7 +32,7 @@ export default class Post extends React.Component {
         }
 
         fetch(
-            `https://json-server-posts-api.herokuapp.com/api/posts/${this.state.post.id}`,
+            `https://itp-404-final-project-api.herokuapp.com/api/posts/${this.state.post.id}`,
             {
                 method: "DELETE"
             }

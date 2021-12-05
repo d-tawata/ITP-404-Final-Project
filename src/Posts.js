@@ -12,7 +12,7 @@ export default class Posts extends React.Component {
 
     componentDidMount() {
         fetch(
-            "https://json-server-posts-api.herokuapp.com/api/posts?_sort=id&_order=desc"
+            "https://itp-404-final-project-api.herokuapp.com/api/posts?_sort=id&_order=desc"
         )
             .then((response) => {
                 return response.json();
