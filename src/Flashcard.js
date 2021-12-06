@@ -2,29 +2,29 @@ import React from "react";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
-export default class Post extends React.Component {
+export default class Flashcard extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            post: {}
+            flashcard: {}
         };
     }
 
     componentDidMount() {
-        const id = this.props.match.params.postId;
-        fetch(`https://json-server-posts-api.herokuapp.com/api/posts/${id}`)
+        const id = this.props.match.params.flashcardId;
+        fetch(`https://json-server-posts-api.herokuapp.com/api/flashcards/${id}`)
             .then((response) => {
                 return response.json();
             })
             .then((json) => {
-                this.setState({ post: json });
+                this.setState({ flashcard: json });
             });
     }
 
     deletePost() {
         const isDeleteConfirmed = window.confirm(
-            "Are you sure you want to delete this post?"
+            "Are you sure you want to delete this flashcard?"
         );
 
         if (!isDeleteConfirmed) {
@@ -32,12 +32,12 @@ export default class Post extends React.Component {
         }
 
         fetch(
-            `https://itp-404-final-project-api.herokuapp.com/api/posts/${this.state.post.id}`,
+            `https://itp-404-final-project-api.herokuapp.com/api/flashcards/${this.state.flashcard.id}`,
             {
                 method: "DELETE"
             }
         ).then((json) => {
-            toast.success(`Post "${this.state.post.title}" was deleted`);
+            toast.success(`Flashcard "${this.state.flashcard.title}" was deleted`);
             this.props.history.push("/");
         });
     }
@@ -45,12 +45,12 @@ export default class Post extends React.Component {
     render() {
         return (
             <>
-                <h1>{this.state.post.title}</h1>
-                <p>{this.state.post.body}</p>
+                <h1>{this.state.flashcard.title}</h1>
+                <p>{this.state.flashcard.body}</p>
                 <div className="btn-group">
                     <Link
                         className="btn btn-primary"
-                        to={`/posts/${this.props.match.params.postId}/edit`}
+                        to={`/posts/${this.props.match.params.flashcardId}/edit`}
                     >
                         Edit
                     </Link>

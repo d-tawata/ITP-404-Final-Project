@@ -24,9 +24,9 @@ export default class App extends React.Component {
             <Route path="/study">
               <div>Study page here...</div>
             </Route>
-            <Route path="/posts/new" component={CreateFlashcardForm} />
-            <Route path="/posts/:postId/edit" component={EditFlashcardForm} />
-            <Route path="/posts/:postId" component={Flashcard} />
+            <Route path="/flashcards/new" component={CreateFlashcardForm} />
+            <Route path="/flashcards/:flashcardId/edit" component={EditFlashcardForm} />
+            <Route path="/flashcards/:flashcardId" component={Flashcard} />
             <Route path="/">
               <Flashcards />
             </Route>

@@ -12,7 +12,7 @@ export default class Flashcards extends React.Component {
 
     componentDidMount() {
         fetch(
-            "https://itp-404-final-project-api.herokuapp.com/api/posts?_sort=id&_order=desc"
+            "https://itp-404-final-project-api.herokuapp.com/api/flashcards?_sort=id&_order=desc"
         )
             .then((response) => {
                 return response.json();
@@ -29,7 +29,7 @@ export default class Flashcards extends React.Component {
                     {this.state.flashcards.map((flashcard) => {
                         return (
                             <li key={flashcard.id}>
-                                <Link to={`/posts/${flashcard.id}`}>{flashcard.title}</Link>
+                                <Link to={`/flashcards/${flashcard.id}`}>{flashcard.title}</Link>
                             </li>
                         );
                     })}

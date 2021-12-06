@@ -26,7 +26,7 @@ export default class CreateFlashcardForm extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
 
-        fetch("https://itp-404-final-project-api.herokuapp.com/api/posts", {
+        fetch("https://itp-404-final-project-api.herokuapp.com/api/flashcards", {
             method: "POST",
             body: JSON.stringify({
                 title: this.state.title,

@@ -27,7 +27,7 @@ export default class EditFlashcardForm extends React.Component {
         event.preventDefault();
 
         fetch(
-            `https://json-server-posts-api.herokuapp.com/api/posts/${this.props.match.params.postId}`,
+            `https://json-server-posts-api.herokuapp.com/api/flashcards/${this.props.match.params.flashcardId}`,
             {
                 method: "PUT",
                 body: JSON.stringify({
@@ -53,7 +53,7 @@ export default class EditFlashcardForm extends React.Component {
 
     componentDidMount() {
         const id = this.props.match.params.postId;
-        fetch(`https://itp-404-final-project-api.herokuapp.com/api/posts/${id}`)
+        fetch(`https://itp-404-final-project-api.herokuapp.com/api/flashcards/${id}`)
             .then((response) => {
                 return response.json();
             })
