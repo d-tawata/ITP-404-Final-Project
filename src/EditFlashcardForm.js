@@ -67,7 +67,7 @@ export default class EditFlashcardForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <div className="my-3">
                     <label htmlFor="name" className="form-label">
-                        Title
+                        Front
                     </label>
 
                     <input
@@ -80,7 +80,7 @@ export default class EditFlashcardForm extends React.Component {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="body" className="form-label">
-                        Body
+                        Back
                     </label>
                     <textarea
                         className="form-control"
