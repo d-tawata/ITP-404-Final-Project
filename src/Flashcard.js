@@ -13,7 +13,7 @@ export default class Flashcard extends React.Component {
 
     componentDidMount() {
         const id = this.props.match.params.flashcardId;
-        fetch(`https://json-server-posts-api.herokuapp.com/api/flashcards/${id}`)
+        fetch(`https://itp-404-final-project-api.herokuapp.com/api/flashcards/${id}`)
             .then((response) => {
                 return response.json();
             })
@@ -22,7 +22,7 @@ export default class Flashcard extends React.Component {
             });
     }
 
-    deletePost() {
+    deleteFlashcard() {
         const isDeleteConfirmed = window.confirm(
             "Are you sure you want to delete this flashcard?"
         );
@@ -50,7 +50,7 @@ export default class Flashcard extends React.Component {
                 <div className="btn-group">
                     <Link
                         className="btn btn-primary"
-                        to={`/posts/${this.props.match.params.flashcardId}/edit`}
+                        to={`/flashcards/${this.props.match.params.flashcardId}/edit`}
                     >
                         Edit
                     </Link>
@@ -58,7 +58,7 @@ export default class Flashcard extends React.Component {
                         type="button"
                         className="btn btn-danger"
                         onClick={() => {
-                            this.deletePost();
+                            this.deleteFlashcard();
                         }}
                     >
                         Delete
