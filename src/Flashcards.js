@@ -29,7 +29,7 @@ export default class Flashcards extends React.Component {
                     {this.state.flashcards.map((flashcard) => {
                         return (
                             <li key={flashcard.id}>
-                                <Link to={`/flashcards/${flashcard.id}`}>{flashcard.title}</Link>
+                                <Link to={`/flashcards/${flashcard.id}`}>{flashcard.title}, {flashcard.favorite ? "favorite" : "not favorite"}</Link>
                             </li>
                         );
                     })}

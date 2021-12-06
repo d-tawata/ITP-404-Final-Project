@@ -47,6 +47,7 @@ export default class Flashcard extends React.Component {
             <>
                 <h1>{this.state.flashcard.title}</h1>
                 <p>{this.state.flashcard.body}</p>
+                <p>Favorite: {this.state.flashcard.favorite ? "yes" : "no"}</p>
                 <div className="btn-group">
                     <Link
                         className="btn btn-primary"
