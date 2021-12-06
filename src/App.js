@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Navigation from "./Navigation";
 import Flashcards from "./Flashcards";
+import Comments from "./Comments";
 import Flashcard from "./Flashcard";
 import Favorites from "./Favorites";
 import CreateFlashcardForm from "./CreateFlashcardForm";
@@ -30,6 +31,7 @@ export default class App extends React.Component {
             <Route path="/flashcards/:flashcardId" component={Flashcard} />
             <Route path="/">
               <Flashcards />
+              <Comments />
             </Route>
           </Switch>
         </div>
