@@ -4,13 +4,15 @@ import { toast } from "react-toastify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark as farBookmark } from "@fortawesome/free-regular-svg-icons";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import Modal from "./Modal";
 
 export default class Flashcards extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            flashcards: []
+            flashcards: [],
+            isModalOpen: false
         };
     }
 
@@ -107,6 +109,30 @@ export default class Flashcards extends React.Component {
                         })}
                     </tbody>
                 </table>
+
+                <div className="Flashcards">
+                    <button
+                        type="button"
+                        onClick={() => {
+                            this.setState({ isModalOpen: true });
+                        }}
+                    >
+                        Open modal
+                    </button>
+
+                    {this.state.isModalOpen && (
+                        <Modal
+                            title="My modal title"
+                            body={() => {
+                                return <p>Modal body text goes here.</p>;
+                            }}
+                            onClose={() => {
+                                this.setState({ isModalOpen: false });
+                            }}
+                        />
+                    )}
+                </div>
+                <div id="modal-container"></div>
             </>
         );
     }

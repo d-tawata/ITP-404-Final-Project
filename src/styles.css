@@ -7,3 +7,7 @@ a.active {
   text-decoration: underline;
   background-color: #eee;
 }
+
+.modal {
+  display: block !important;
+}
