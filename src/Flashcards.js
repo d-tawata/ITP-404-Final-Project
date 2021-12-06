@@ -25,6 +25,7 @@ export default class Flashcards extends React.Component {
     render() {
         return (
             <>
+                <h3>Flashcards</h3>
                 <ol reversed>
                     {this.state.flashcards.map((flashcard) => {
                         return (
