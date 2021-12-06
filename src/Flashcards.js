@@ -26,15 +26,28 @@ export default class Flashcards extends React.Component {
         return (
             <>
                 <h3>Flashcards</h3>
-                <ol reversed>
-                    {this.state.flashcards.map((flashcard) => {
-                        return (
-                            <li key={flashcard.id}>
-                                <Link to={`/flashcards/${flashcard.id}`}>{flashcard.title}, {flashcard.favorite ? "favorite" : "not favorite"}</Link>
-                            </li>
-                        );
-                    })}
-                </ol>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Front</th>
+                            <th scope="col">Back</th>
+                            <th scope="col">Favorite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.flashcards.map((flashcard) => {
+                            return (
+                                <tr key={flashcard.id}>
+                                    <th scope="row"><Link to={`/flashcards/${flashcard.id}`}>{flashcard.id}</Link></th>
+                                    <td>{flashcard.title}</td>
+                                    <td>{flashcard.body}</td>
+                                    <td>{flashcard.favorite ? "favorite" : "not favorite"}</td>
+                                </tr>
+                            );
+                        })}
+                    </tbody>
+                </table>
             </>
         );
     }
