@@ -30,7 +30,14 @@ export default class Flashcards extends React.Component {
                     {this.state.comments.map((comment) => {
                         return (
                             <li key={comment.id}>
-                                {comment.body}
+                                <figure>
+                                    <blockquote className="blockquote">
+                                        <p>{comment.body}</p>
+                                    </blockquote>
+                                    <figcaption className="blockquote-footer">
+                                        {comment.author}<cite title="timestamp">{comment.timestamp}</cite>
+                                    </figcaption>
+                                </figure>
                             </li>
                         );
                     })}
