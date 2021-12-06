@@ -48,16 +48,16 @@ export default class Flashcard extends React.Component {
                 <h1>{this.state.flashcard.title}</h1>
                 <p>{this.state.flashcard.body}</p>
                 <p>Favorite: {this.state.flashcard.favorite ? "yes" : "no"}</p>
-                <div className="btn-group">
+                <div>
                     <Link
-                        className="btn btn-primary"
+                        className="btn btn-secondary"
                         to={`/flashcards/${this.props.match.params.flashcardId}/edit`}
                     >
                         Edit
                     </Link>
                     <button
                         type="button"
-                        className="btn btn-danger"
+                        className="btn btn-danger mx-3"
                         onClick={() => {
                             this.deleteFlashcard();
                         }}

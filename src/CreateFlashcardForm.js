@@ -76,7 +76,7 @@ export default class CreateFlashcardForm extends React.Component {
                         onChange={this.handleBodyChange}
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-secondary">
                     Create
                 </button>
             </form>
