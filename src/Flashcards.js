@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookmark as farBookmark } from "@fortawesome/free-regular-svg-icons";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 
 export default class Flashcards extends React.Component {
     constructor(props) {
@@ -42,7 +45,17 @@ export default class Flashcards extends React.Component {
                                     <th scope="row"><Link to={`/flashcards/${flashcard.id}`}>{flashcard.id}</Link></th>
                                     <td>{flashcard.title}</td>
                                     <td>{flashcard.body}</td>
-                                    <td>{flashcard.favorite ? "favorite" : "not favorite"}</td>
+                                    <td>{flashcard.favorite ?
+                                        <FontAwesomeIcon
+                                            icon={faBookmark}
+                                            color="maroon"
+                                            size="2x"
+                                        /> :
+                                        <FontAwesomeIcon
+                                            icon={farBookmark}
+                                            color="maroon"
+                                            size="2x"
+                                        />}</td>
                                 </tr>
                             );
                         })}
