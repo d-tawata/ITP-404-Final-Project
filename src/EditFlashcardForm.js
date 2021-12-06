@@ -90,7 +90,7 @@ export default class EditFlashcardForm extends React.Component {
                         onChange={this.handleBodyChange}
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-secondary">
                     Update
                 </button>
             </form>
