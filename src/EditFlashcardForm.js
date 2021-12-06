@@ -60,6 +60,8 @@ export default class EditFlashcardForm extends React.Component {
             .then((json) => {
                 this.setState(json);
             });
+
+        document.title = "Edit Flashcard";
     }
 
     render() {

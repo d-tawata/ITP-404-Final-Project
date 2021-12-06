@@ -23,6 +23,8 @@ export default class Flashcard extends React.Component {
             .then((json) => {
                 this.setState({ flashcard: json });
             });
+
+        document.title = this.state.flashcard.title || "Flashcard";
     }
 
     deleteFlashcard() {

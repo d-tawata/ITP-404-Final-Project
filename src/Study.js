@@ -20,6 +20,8 @@ export default class Study extends React.Component {
             .then((json) => {
                 this.setState({ flashcards: json });
             });
+
+        document.title = "Study Mode";
     }
 
     render() {

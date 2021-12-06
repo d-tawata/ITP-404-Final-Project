@@ -15,6 +15,10 @@ export default class CreateFlashcardForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        document.title = "Create a New Flashcard";
+    }
+
     handleTitleChange(event) {
         this.setState({ title: event.target.value });
     }

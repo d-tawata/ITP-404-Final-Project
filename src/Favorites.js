@@ -23,6 +23,8 @@ export default class Favorites extends React.Component {
             .then((json) => {
                 this.setState({ flashcards: json });
             });
+
+        document.title = "Favorites";
     }
 
     render() {

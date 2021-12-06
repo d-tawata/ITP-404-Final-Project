@@ -24,6 +24,8 @@ export default class Flashcards extends React.Component {
             .then((json) => {
                 this.setState({ flashcards: json });
             });
+
+        document.title = "Flashcards List View";
     }
 
     onFavoriteClick(flashcard) {
