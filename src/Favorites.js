@@ -25,17 +25,29 @@ export default class Favorites extends React.Component {
     render() {
         return (
             <>
-                <ol reversed>
-                    {this.state.flashcards.map((flashcard) => {
-                        if (flashcard.favorite) {
-                            return (
-                                <li key={flashcard.id}>
-                                    <Link to={`/flashcards/${flashcard.id}`}>{flashcard.title}</Link>
-                                </li>
-                            );
-                        } else { return; }
-                    })}
-                </ol>
+                <h3>Favorites</h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Front</th>
+                            <th scope="col">Back</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.flashcards.map((flashcard) => {
+                            if (flashcard.favorite) {
+                                return (
+                                    <tr key={flashcard.id}>
+                                        <th scope="row"><Link to={`/flashcards/${flashcard.id}`}>{flashcard.id}</Link></th>
+                                        <td>{flashcard.title}</td>
+                                        <td>{flashcard.body}</td>
+                                    </tr>
+                                );
+                            } else { return; }
+                        })}
+                    </tbody>
+                </table>
             </>
         );
     }
