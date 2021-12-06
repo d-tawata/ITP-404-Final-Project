@@ -1,6 +1,9 @@
 import React from "react";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookmark as farBookmark } from "@fortawesome/free-regular-svg-icons";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 
 export default class Flashcard extends React.Component {
     constructor(props) {
@@ -45,19 +48,33 @@ export default class Flashcard extends React.Component {
     render() {
         return (
             <>
-                <h1>{this.state.flashcard.title}</h1>
+                <div className="row">
+                    <div className="col-auto">
+                        {this.state.flashcard.favorite ?
+                            <FontAwesomeIcon
+                                icon={faBookmark}
+                                color="maroon"
+                                size="3x"
+                            /> :
+                            <FontAwesomeIcon
+                                icon={farBookmark}
+                                color="maroon"
+                                size="3x"
+                            />}
+                    </div>
+                    <h1 className="col mb-3">{this.state.flashcard.title}</h1>
+                </div>
                 <p>{this.state.flashcard.body}</p>
-                <p>Favorite: {this.state.flashcard.favorite ? "yes" : "no"}</p>
-                <div>
+                <div className="row">
                     <Link
-                        className="btn btn-secondary"
+                        className="btn btn-secondary col-auto"
                         to={`/flashcards/${this.props.match.params.flashcardId}/edit`}
                     >
                         Edit
                     </Link>
                     <button
                         type="button"
-                        className="btn btn-danger mx-3"
+                        className="btn btn-danger mx-3 col-auto"
                         onClick={() => {
                             this.deleteFlashcard();
                         }}
