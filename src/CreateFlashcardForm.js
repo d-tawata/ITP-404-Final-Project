@@ -54,31 +54,56 @@ export default class CreateFlashcardForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className="needs-validation" novalidate>
                 <div className="my-3">
-                    <label htmlFor="name" className="form-label">
+                    <label htmlFor="title" className="form-label">
                         Front
                     </label>
-
                     <input
-                        type="title"
+                        type="text"
                         className="form-control"
                         id="title"
                         value={this.state.title}
                         onChange={this.handleTitleChange}
+                        placeholder="Word"
+                        required
                     />
+                    <div className="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div className="invalid-feedback">
+                        Please input text here.
+                    </div>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="body" className="form-label">
                         Back
                     </label>
-                    <textarea
+                    <input
+                        type="text"
                         className="form-control"
                         id="body"
                         rows="3"
                         value={this.state.body}
                         onChange={this.handleBodyChange}
+                        placeholder="Definition"
+                        required
                     />
+                    <div className="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div className="invalid-feedback">
+                        Please input text here.
+                    </div>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+                    <label class="form-check-label" for="invalidCheck">
+                        Agree to losing data after exiting browser.
+                    </label>
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
                 </div>
                 <button type="submit" className="btn btn-secondary">
                     Create
