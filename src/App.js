@@ -9,6 +9,7 @@ import Favorites from "./Favorites";
 import Study from "./Study";
 import CreateFlashcardForm from "./CreateFlashcardForm";
 import EditFlashcardForm from "./EditFlashcardForm";
+import NoMatch from "./NoMatch";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./styles.css";
@@ -21,18 +22,21 @@ export default class App extends React.Component {
           <Navigation />
 
           <Switch>
-            <Route path="/favorites">
+            <Route exact path="/favorites">
               <Favorites />
             </Route>
-            <Route path="/study">
+            <Route exact path="/study">
               <Study />
             </Route>
-            <Route path="/flashcards/new" component={CreateFlashcardForm} />
-            <Route path="/flashcards/:flashcardId/edit" component={EditFlashcardForm} />
-            <Route path="/flashcards/:flashcardId" component={Flashcard} />
-            <Route path="/">
+            <Route exact path="/flashcards/new" component={CreateFlashcardForm} />
+            <Route exact path="/flashcards/:flashcardId/edit" component={EditFlashcardForm} />
+            <Route exact path="/flashcards/:flashcardId" component={Flashcard} />
+            <Route exact path="/">
               <Flashcards />
               <Comments />
+            </Route>
+            <Route path="*">
+              <NoMatch />
             </Route>
           </Switch>
         </div>
