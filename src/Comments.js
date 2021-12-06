@@ -25,7 +25,7 @@ export default class Flashcards extends React.Component {
     render() {
         return (
             <>
-                <h5>Comments</h5>
+                <h3>Comments</h3>
                 <ul reversed>
                     {this.state.comments.map((comment) => {
                         return (
@@ -35,7 +35,7 @@ export default class Flashcards extends React.Component {
                                         <p>{comment.body}</p>
                                     </blockquote>
                                     <figcaption className="blockquote-footer">
-                                        {comment.author}<cite title="timestamp">{comment.timestamp}</cite>
+                                        {comment.author}, <cite title="timestamp">{comment.timestamp}</cite>
                                     </figcaption>
                                 </figure>
                             </li>
