@@ -8,22 +8,22 @@ export default class Navigation extends React.Component {
                 <ul className="nav justify-content-center">
                     <li className="nav-item">
                         <NavLink exact className="nav-link" to="/">
-                            Posts
+                            Flashcards List View
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink exact className="nav-link" to="/study">
+                            Study Mode
                         </NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink exact className="nav-link" to="/posts/new">
-                            Write a Post
+                            Create a New Flashcard
                         </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink exact className="nav-link" to="/about">
-                            About
-                        </NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink exact className="nav-link" to="/contact">
-                            Contact
+                        <NavLink exact className="nav-link" to="/favorites">
+                            Favorites
                         </NavLink>
                     </li>
                 </ul>

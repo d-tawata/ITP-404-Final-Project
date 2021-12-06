@@ -1,7 +1,7 @@
 import React from "react";
 import { toast } from "react-toastify";
 
-export default class EditPostForm extends React.Component {
+export default class CreateFlashcardForm extends React.Component {
     constructor(props) {
         super(props);
 
@@ -26,19 +26,16 @@ export default class EditPostForm extends React.Component {
     handleSubmit(event) {
         event.preventDefault();
 
-        fetch(
-            `https://json-server-posts-api.herokuapp.com/api/posts/${this.props.match.params.postId}`,
-            {
-                method: "PUT",
-                body: JSON.stringify({
-                    title: this.state.title,
-                    body: this.state.body
-                }),
-                headers: {
-                    "Content-type": "application/json; charset=UTF-8"
-                }
+        fetch("https://itp-404-final-project-api.herokuapp.com/api/posts", {
+            method: "POST",
+            body: JSON.stringify({
+                title: this.state.title,
+                body: this.state.body
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
             }
-        )
+        })
             .then((response) => response.json())
             .then((json) => {
                 this.setState({
@@ -46,19 +43,8 @@ export default class EditPostForm extends React.Component {
                     body: ""
                 });
 
-                toast.success(`Post "${json.title}" was successfully updated`);
+                toast.success(`Flashcard "${json.title}" was successfully created`);
                 this.props.history.push("/");
-            });
-    }
-
-    componentDidMount() {
-        const id = this.props.match.params.postId;
-        fetch(`https://itp-404-final-project-api.herokuapp.com/api/posts/${id}`)
-            .then((response) => {
-                return response.json();
-            })
-            .then((json) => {
-                this.setState(json);
             });
     }
 
@@ -91,7 +77,7 @@ export default class EditPostForm extends React.Component {
                     />
                 </div>
                 <button type="submit" className="btn btn-primary">
-                    Update
+                    Create
                 </button>
             </form>
         );

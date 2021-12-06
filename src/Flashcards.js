@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default class Posts extends React.Component {
+export default class Flashcards extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            posts: []
+            flashcards: []
         };
     }
 
@@ -18,7 +18,7 @@ export default class Posts extends React.Component {
                 return response.json();
             })
             .then((json) => {
-                this.setState({ posts: json });
+                this.setState({ flashcards: json });
             });
     }
 
@@ -26,10 +26,10 @@ export default class Posts extends React.Component {
         return (
             <>
                 <ol reversed>
-                    {this.state.posts.map((post) => {
+                    {this.state.flashcards.map((flashcard) => {
                         return (
-                            <li key={post.id}>
-                                <Link to={`/posts/${post.id}`}>{post.title}</Link>
+                            <li key={flashcard.id}>
+                                <Link to={`/posts/${flashcard.id}`}>{flashcard.title}</Link>
                             </li>
                         );
                     })}
