@@ -64,36 +64,39 @@ export default class EditFlashcardForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <div className="my-3">
-                    <label htmlFor="name" className="form-label">
-                        Front
-                    </label>
+            <>
+                <form onSubmit={this.handleSubmit}>
+                    <h1>Edit Flashcard</h1>
+                    <div className="my-3">
+                        <label htmlFor="name" className="form-label">
+                            Front
+                        </label>
 
-                    <input
-                        type="title"
-                        className="form-control"
-                        id="title"
-                        value={this.state.title}
-                        onChange={this.handleTitleChange}
-                    />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="body" className="form-label">
-                        Back
-                    </label>
-                    <textarea
-                        className="form-control"
-                        id="body"
-                        rows="3"
-                        value={this.state.body}
-                        onChange={this.handleBodyChange}
-                    />
-                </div>
-                <button type="submit" className="btn btn-secondary">
-                    Update
-                </button>
-            </form>
+                        <input
+                            type="title"
+                            className="form-control"
+                            id="title"
+                            value={this.state.title}
+                            onChange={this.handleTitleChange}
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="body" className="form-label">
+                            Back
+                        </label>
+                        <textarea
+                            className="form-control"
+                            id="body"
+                            rows="3"
+                            value={this.state.body}
+                            onChange={this.handleBodyChange}
+                        />
+                    </div>
+                    <button type="submit" className="btn btn-secondary">
+                        Update
+                    </button>
+                </form>
+            </>
         );
     }
 }
