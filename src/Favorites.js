@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookmark as farBookmark } from "@fortawesome/free-regular-svg-icons";
+import { faStar, faBookmark } from "@fortawesome/free-solid-svg-icons";
 
 export default class Favorites extends React.Component {
     constructor(props) {
@@ -23,9 +26,19 @@ export default class Favorites extends React.Component {
     }
 
     render() {
+        const size = '2x';
         return (
             <>
-                <h3>Favorites</h3>
+                <div className="row">
+                    <div className="col-auto">
+                        <FontAwesomeIcon
+                            icon={faBookmark}
+                            color="maroon"
+                            size={size}
+                        />
+                    </div>
+                    <h3 className="col text-left">Favorites</h3>
+                </div>
                 <table class="table table-hover">
                     <thead>
                         <tr>
