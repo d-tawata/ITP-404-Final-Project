@@ -55,6 +55,7 @@ export default class CreateFlashcardForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit} className="needs-validation" novalidate>
+                <h3>Create a New Flashcard</h3>
                 <div className="my-3">
                     <label htmlFor="title" className="form-label">
                         Front
@@ -96,7 +97,7 @@ export default class CreateFlashcardForm extends React.Component {
                         Please input text here.
                     </div>
                 </div>
-                <div class="form-check">
+                <div class="form-check mb-3">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
                     <label class="form-check-label" for="invalidCheck">
                         Agree to losing data after exiting browser.
