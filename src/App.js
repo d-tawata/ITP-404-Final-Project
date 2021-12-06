@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import Navigation from "./Navigation";
 import Flashcards from "./Flashcards";
 import Flashcard from "./Flashcard";
+import Favorites from "./Favorites";
 import CreateFlashcardForm from "./CreateFlashcardForm";
 import EditFlashcardForm from "./EditFlashcardForm";
 
@@ -19,7 +20,7 @@ export default class App extends React.Component {
 
           <Switch>
             <Route path="/favorites">
-              <div>Favorites page here...</div>
+              <Favorites />
             </Route>
             <Route path="/study">
               <div>Study page here...</div>
