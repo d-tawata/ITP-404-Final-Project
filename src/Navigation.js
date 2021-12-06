@@ -5,7 +5,7 @@ export default class Navigation extends React.Component {
     render() {
         return (
             <nav>
-                <ul className="nav justify-content-center">
+                <ul className="nav nav-tabs justify-content-center my-3">
                     <li className="nav-item">
                         <NavLink exact className="nav-link" to="/">
                             Flashcards List View
