@@ -6,6 +6,7 @@ import Flashcards from "./Flashcards";
 import Comments from "./Comments";
 import Flashcard from "./Flashcard";
 import Favorites from "./Favorites";
+import Study from "./Study";
 import CreateFlashcardForm from "./CreateFlashcardForm";
 import EditFlashcardForm from "./EditFlashcardForm";
 
@@ -24,7 +25,7 @@ export default class App extends React.Component {
               <Favorites />
             </Route>
             <Route path="/study">
-              <div>Study page here...</div>
+              <Study />
             </Route>
             <Route path="/flashcards/new" component={CreateFlashcardForm} />
             <Route path="/flashcards/:flashcardId/edit" component={EditFlashcardForm} />
