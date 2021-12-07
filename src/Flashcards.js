@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark as farBookmark } from "@fortawesome/free-regular-svg-icons";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./ModalTerms";
+import Bookmark from "./Bookmark";
 
 export default class Flashcards extends React.Component {
     constructor(props) {
@@ -87,19 +88,9 @@ export default class Flashcards extends React.Component {
                                         />}
                                     </td> */}
                                     <td>
-                                        <button
-                                            type="button"
-                                            className="btn btn-link"
-                                            onClick={() => {
-                                                this.onFavoriteClick(flashcard);
-                                            }}
-                                        >
-                                            <FontAwesomeIcon
-                                                icon={flashcard.favorite ? faBookmark : farBookmark}
-                                                color="maroon"
-                                                size="2x"
-                                            />
-                                        </button>
+                                        <Bookmark
+                                            flashcard={flashcard}
+                                        />
                                     </td>
                                 </tr>
                             );

@@ -9,46 +9,29 @@ import Modal from "./ModalTerms";
 export default class Bookmark extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            flashcard: {}
-        };
     }
 
-    componentDidMount() {
-        const id = this.props.match.params.flashcardId;
-        fetch(`https://itp-404-final-project-api.herokuapp.com/api/flashcards/${id}`)
-            .then((response) => {
-                return response.json();
-            })
-            .then((json) => {
-                this.setState({
-                    flashcard: json
-                });
-            });
-    };
-
     onFavoriteClick() {
+        const flashcard = this.props.flashcard;
         fetch(
-            `https://itp-404-final-project-api.herokuapp.com/api/flashcards/${this.state.flashcard.id}`,
+            `https://itp-404-final-project-api.herokuapp.com/api/flashcards/${flashcard.id}`,
             {
                 method: "PUT",
                 body: JSON.stringify({
-                    favorite: this.state.flashcard.favorite
+                    favorite: !flashcard.favorite,
+                    title: flashcard.title,
+                    body: flashcard.body
                 }),
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
                 }
             }
         )
-            .then((response) => response.json())
-            .then((json) => {
-                console.log(this.state.flashcard.favorite);
-                this.setState({
-                    favorite: !this.state.flashcard.favorite
-                });
-
-                toast.success(`Flashcard "${json.title}" was favorited`);
+            .then(() => {
+                !flashcard.favorite ?
+                    toast.success(`Flashcard "${flashcard.title}" was favorited`)
+                    :
+                    toast.success(`Flashcard "${flashcard.title}" was unfavorited`);
                 //this.props.history.push("/");
             });
     }
@@ -59,13 +42,13 @@ export default class Bookmark extends React.Component {
                 <button
                     type="button"
                     className="btn btn-link"
-                //onClick={() => {
-                //    this.onFavoriteClick();
-                //}}
+                    onClick={() => {
+                        this.onFavoriteClick();
+                    }}
                 >
                     <FontAwesomeIcon
-                        //icon={flashcard.favorite ? faBookmark : farBookmark}
-                        icon={farBookmark}
+                        icon={this.props.flashcard.favorite ? faBookmark : farBookmark}
+                        //icon={farBookmark}
                         color="maroon"
                         size="2x"
                     />
