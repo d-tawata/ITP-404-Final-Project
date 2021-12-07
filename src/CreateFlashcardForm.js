@@ -55,7 +55,7 @@ export default class CreateFlashcardForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit} className="needs-validation" novalidate>
+            <form onSubmit={this.handleSubmit} className="needs-validation">
                 <h3>Create a New Flashcard</h3>
                 <div className="my-3">
                     <label htmlFor="title" className="form-label">
@@ -70,12 +70,6 @@ export default class CreateFlashcardForm extends React.Component {
                         placeholder="Word"
                         required
                     />
-                    <div className="valid-feedback">
-                        Looks good!
-                    </div>
-                    <div className="invalid-feedback">
-                        Please input text here.
-                    </div>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="body" className="form-label">
@@ -91,21 +85,13 @@ export default class CreateFlashcardForm extends React.Component {
                         placeholder="Definition"
                         required
                     />
-                    <div className="valid-feedback">
-                        Looks good!
-                    </div>
-                    <div className="invalid-feedback">
-                        Please input text here.
-                    </div>
                 </div>
-                <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
-                    <label class="form-check-label" for="invalidCheck">
+
+                <div className="form-check mb-3">
+                    <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+                    <label className="form-check-label" htmlFor="invalidCheck">
                         Agree to Terms & Conditions.
                     </label>
-                    <div class="invalid-feedback">
-                        You must agree before submitting.
-                    </div>
                 </div>
 
                 <div className="CreateFlashcardForm mb-3">
