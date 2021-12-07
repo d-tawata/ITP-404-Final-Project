@@ -1,5 +1,6 @@
 import React from "react";
 import { toast } from "react-toastify";
+import Modal from "./ModalTerms";
 
 export default class CreateFlashcardForm extends React.Component {
     constructor(props) {
@@ -100,12 +101,37 @@ export default class CreateFlashcardForm extends React.Component {
                 <div class="form-check mb-3">
                     <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
                     <label class="form-check-label" for="invalidCheck">
-                        Agree to losing data after exiting browser.
+                        Agree to Terms & Conditions.
                     </label>
                     <div class="invalid-feedback">
                         You must agree before submitting.
                     </div>
                 </div>
+
+                <div className="CreateFlashcardForm mb-3">
+                    <button
+                        type="button"
+                        onClick={() => {
+                            this.setState({ isModalOpen: true });
+                        }}
+                    >
+                        See Terms & Conditions
+                    </button>
+
+                    {this.state.isModalOpen && (
+                        <Modal
+                            title="Flashcards App Terms & Conditions"
+                            body={() => {
+                                return <p>You agree to losing your flashcard data after exiting the browser.</p>;
+                            }}
+                            onClose={() => {
+                                this.setState({ isModalOpen: false });
+                            }}
+                        />
+                    )}
+                </div>
+                <div id="modal-container"></div>
+
                 <button type="submit" className="btn btn-secondary">
                     Create
                 </button>

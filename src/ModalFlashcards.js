@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-export default class Modal extends React.Component {
+export default class ModalFlashcards extends React.Component {
     render() {
         const modalContainer = document.getElementById("modal-container");
 
