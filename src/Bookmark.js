@@ -12,6 +12,13 @@ export default class Bookmark extends React.Component {
     }
 
     onFavoriteClick() {
+        const today = new Date();
+        const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        const dateTime = date + ' ' + time;
+
+        //console.log(dateTime);
+
         const flashcard = this.props.flashcard;
         fetch(
             `https://itp-404-final-project-api.herokuapp.com/api/flashcards/${flashcard.id}`,
@@ -20,7 +27,8 @@ export default class Bookmark extends React.Component {
                 body: JSON.stringify({
                     favorite: !flashcard.favorite,
                     title: flashcard.title,
-                    body: flashcard.body
+                    body: flashcard.body,
+                    favoriteTimestamp: !flashcard.favorite ? dateTime : ""
                 }),
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
@@ -48,7 +56,6 @@ export default class Bookmark extends React.Component {
                 >
                     <FontAwesomeIcon
                         icon={this.props.flashcard.favorite ? faBookmark : farBookmark}
-                        //icon={farBookmark}
                         color={this.props.color || "maroon"}
                         size={this.props.size || "2x"}
                     />

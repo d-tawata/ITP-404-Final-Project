@@ -11,11 +11,11 @@ export default class Navigation extends React.Component {
                             Flashcards List View
                         </NavLink>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <NavLink exact className="nav-link" to="/study">
                             Study Mode
                         </NavLink>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                         <NavLink exact className="nav-link" to="/flashcards/new">
                             Create a New Flashcard

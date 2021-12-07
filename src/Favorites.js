@@ -46,6 +46,7 @@ export default class Favorites extends React.Component {
                             <th scope="col">#</th>
                             <th scope="col">Front</th>
                             <th scope="col">Back</th>
+                            <th scope="col">Time Favorited</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,6 +57,7 @@ export default class Favorites extends React.Component {
                                         <th scope="row"><Link to={`/flashcards/${flashcard.id}`}>{flashcard.id}</Link></th>
                                         <td>{flashcard.title}</td>
                                         <td>{flashcard.body}</td>
+                                        <td>{flashcard.favoriteTimestamp}</td>
                                     </tr>
                                 );
                             } else { return; }
