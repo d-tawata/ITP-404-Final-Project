@@ -52,7 +52,8 @@ export default class EditFlashcardForm extends React.Component {
     }
 
     componentDidMount() {
-        const id = this.props.match.params.postId;
+        const id = this.props.match.params.flashcardId;
+        //console.log(this.props.match);
         fetch(`https://itp-404-final-project-api.herokuapp.com/api/flashcards/${id}`)
             .then((response) => {
                 return response.json();
