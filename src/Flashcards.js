@@ -75,18 +75,6 @@ export default class Flashcards extends React.Component {
                                     <th scope="row"><Link to={`/flashcards/${flashcard.id}`}>{flashcard.id}</Link></th>
                                     <td>{flashcard.title}</td>
                                     <td>{flashcard.body}</td>
-                                    {/* <td>{flashcard.favorite ?
-                                        <FontAwesomeIcon
-                                            icon={faBookmark}
-                                            color="maroon"
-                                            size="2x"
-                                        /> :
-                                        <FontAwesomeIcon
-                                            icon={farBookmark}
-                                            color="maroon"
-                                            size="2x"
-                                        />}
-                                    </td> */}
                                     <td>
                                         <Bookmark
                                             flashcard={flashcard}

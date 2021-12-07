@@ -49,8 +49,8 @@ export default class Bookmark extends React.Component {
                     <FontAwesomeIcon
                         icon={this.props.flashcard.favorite ? faBookmark : farBookmark}
                         //icon={farBookmark}
-                        color="maroon"
-                        size="2x"
+                        color={this.props.color || "maroon"}
+                        size={this.props.size || "2x"}
                     />
                 </button>
             </>

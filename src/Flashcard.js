@@ -53,24 +53,14 @@ export default class Flashcard extends React.Component {
     render() {
         return (
             <>
-                <Bookmark
-                    flashcard={this.state.flashcard}
-                />
                 <div className="row">
-                    <div className="col-auto">
-                        {this.state.flashcard.favorite ?
-                            <FontAwesomeIcon
-                                icon={faBookmark}
-                                color="maroon"
-                                size="3x"
-                            /> :
-                            <FontAwesomeIcon
-                                icon={farBookmark}
-                                color="maroon"
-                                size="3x"
-                            />}
+                    <div className="col-1">
+                        <Bookmark
+                            flashcard={this.state.flashcard}
+                            size="3x"
+                        />
                     </div>
-                    <h1 className="col mb-3">{this.state.flashcard.title}</h1>
+                    <h1 className="col-auto mb-3">{this.state.flashcard.title}</h1>
                 </div>
                 <p>{this.state.flashcard.body}</p>
                 <div className="row">
