@@ -1,6 +1,7 @@
 import React from "react";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import Bookmark from "./Bookmark";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark as farBookmark } from "@fortawesome/free-regular-svg-icons";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
@@ -52,6 +53,7 @@ export default class Flashcard extends React.Component {
     render() {
         return (
             <>
+                {/* <Bookmark /> */}
                 <div className="row">
                     <div className="col-auto">
                         {this.state.flashcard.favorite ?
