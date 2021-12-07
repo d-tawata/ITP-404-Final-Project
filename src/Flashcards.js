@@ -31,28 +31,25 @@ export default class Flashcards extends React.Component {
     }
 
     onFavoriteClick(flashcard) {
-        console.log("start");
-        console.log(flashcard);
         fetch(
-            `https://itp-404-final-project-api.herokuapp.com/api/flashcards/${flashcard}`,
+            `https://itp-404-final-project-api.herokuapp.com/api/flashcards/${flashcard.id}`,
             {
                 method: "PUT",
                 body: JSON.stringify({
-                    favorite: flashcard.favorite
+                    favorite: !flashcard.favorite,
+                    title: flashcard.title,
+                    body: flashcard.body
                 }),
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
                 }
             }
         )
-            .then((response) => response.json())
-            .then((json) => {
-                console.log(flashcard.favorite);
-                this.setState({
-                    favorite: !flashcard.favorite
-                });
-
-                toast.success(`Flashcard "${json.title}" was favorited`);
+            .then(() => {
+                !flashcard.favorite ?
+                    toast.success(`Flashcard "${flashcard.title}" was favorited`)
+                    :
+                    toast.success(`Flashcard "${flashcard.title}" was unfavorited`);
                 //this.props.history.push("/");
             });
     }
