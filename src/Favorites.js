@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookmark as farBookmark } from "@fortawesome/free-regular-svg-icons";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 
 export default class Favorites extends React.Component {
@@ -53,15 +52,18 @@ export default class Favorites extends React.Component {
                     <tbody>
                         {this.state.flashcards.reverse().map((flashcard) => {
                             if (flashcard.favorite) {
+                                this.setState({
+                                    num: this.state.num + 1,
+                                });
                                 return (
                                     <tr key={flashcard.id}>
-                                        <th scope="row"><Link to={`/flashcards/${flashcard.id}`}>{this.state.num++}</Link></th>
+                                        <th scope="row"><Link to={`/flashcards/${flashcard.id}`}>{this.state.num}</Link></th>
                                         <td>{flashcard.title}</td>
                                         <td>{flashcard.body}</td>
                                         <td>{flashcard.favoriteTimestamp}</td>
                                     </tr>
                                 );
-                            } else { return; }
+                            } else { return <></>; }
                         })}
                     </tbody>
                 </table>
