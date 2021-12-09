@@ -1,5 +1,6 @@
 import React from "react";
 import { toast } from "react-toastify";
+import Modal from "./ModalTerms";
 
 export default class EditFlashcardForm extends React.Component {
     constructor(props) {
@@ -68,7 +69,7 @@ export default class EditFlashcardForm extends React.Component {
     render() {
         return (
             <>
-                <form onSubmit={this.handleSubmit} className="needs-validation" novalidate>
+                <form onSubmit={this.handleSubmit} className="needs-validation">
                     <h3>Edit Flashcard</h3>
                     <div className="my-3">
                         <label htmlFor="title" className="form-label">
@@ -83,12 +84,6 @@ export default class EditFlashcardForm extends React.Component {
                             placeholder="Word"
                             required
                         />
-                        <div className="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div className="invalid-feedback">
-                            Please input text here.
-                        </div>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="body" className="form-label">
@@ -104,23 +99,40 @@ export default class EditFlashcardForm extends React.Component {
                             placeholder="Definition"
                             required
                         />
-                        <div className="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div className="invalid-feedback">
-                            Please input text here.
-                        </div>
                     </div>
-                    <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
-                        <label class="form-check-label" for="invalidCheck">
-                            Agree to losing data after exiting browser.
+
+                    <div className="form-check mb-3">
+                        <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+                        <label className="form-check-label" htmlFor="invalidCheck">
+                            Agree to Terms & Conditions.
                         </label>
-                        <div class="invalid-feedback">
-                            You must agree before submitting.
-                        </div>
                     </div>
-                    <button type="submit" className="btn btn-secondary">
+
+                    <div className="CreateFlashcardForm mb-3">
+                        <button
+                            type="button"
+                            className="btn btn-secondary"
+                            onClick={() => {
+                                this.setState({ isModalOpen: true });
+                            }}
+                        >
+                            See Terms & Conditions
+                        </button>
+
+                        {this.state.isModalOpen && (
+                            <Modal
+                                title="Flashcards App Terms & Conditions"
+                                body={() => {
+                                    return <p>You agree to losing this card's bookmarked status if it exists, as well as losing your flashcard data after exiting the browser.</p>;
+                                }}
+                                onClose={() => {
+                                    this.setState({ isModalOpen: false });
+                                }}
+                            />
+                        )}
+                    </div>
+                    <div id="modal-container"></div>
+                    <button type="submit" className="btn btn-dark">
                         Update
                     </button>
                 </form>

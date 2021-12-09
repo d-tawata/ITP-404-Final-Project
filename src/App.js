@@ -3,14 +3,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Navigation from "./Navigation";
 import Flashcards from "./Flashcards";
-import Comments from "./Comments";
 import Flashcard from "./Flashcard";
 import Favorites from "./Favorites";
 import Study from "./Study";
 import CreateFlashcardForm from "./CreateFlashcardForm";
 import EditFlashcardForm from "./EditFlashcardForm";
 import NoMatch from "./NoMatch";
-import Header from "./Header";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./styles.css";
@@ -20,7 +18,6 @@ export default class App extends React.Component {
     return (
       <Router>
         <div className="container">
-          <Header />
           <Navigation />
 
           <Switch>

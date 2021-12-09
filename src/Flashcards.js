@@ -1,10 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookmark as farBookmark } from "@fortawesome/free-regular-svg-icons";
-import { faBookmark } from "@fortawesome/free-solid-svg-icons";
-import Modal from "./ModalTerms";
 import Bookmark from "./Bookmark";
 
 export default class Flashcards extends React.Component {

@@ -97,6 +97,7 @@ export default class CreateFlashcardForm extends React.Component {
                 <div className="CreateFlashcardForm mb-3">
                     <button
                         type="button"
+                        className="btn btn-secondary"
                         onClick={() => {
                             this.setState({ isModalOpen: true });
                         }}
@@ -118,7 +119,7 @@ export default class CreateFlashcardForm extends React.Component {
                 </div>
                 <div id="modal-container"></div>
 
-                <button type="submit" className="btn btn-secondary">
+                <button type="submit" className="btn btn-dark">
                     Create
                 </button>
             </form>

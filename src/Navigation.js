@@ -1,10 +1,14 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default class Navigation extends React.Component {
     render() {
         return (
             <nav>
+                <div className="row">
+                    <h1 className="mx-auto col-auto display-1">My Flashcards</h1>
+                </div>
+
                 <ul className="nav nav-tabs justify-content-center my-3">
                     <li className="nav-item">
                         <NavLink exact className="nav-link" to="/">
