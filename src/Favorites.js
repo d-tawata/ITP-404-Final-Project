@@ -9,7 +9,8 @@ export default class Favorites extends React.Component {
         super(props);
 
         this.state = {
-            flashcards: []
+            flashcards: [],
+            num: 1
         };
     }
 
@@ -50,11 +51,11 @@ export default class Favorites extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.flashcards.map((flashcard) => {
+                        {this.state.flashcards.reverse().map((flashcard) => {
                             if (flashcard.favorite) {
                                 return (
                                     <tr key={flashcard.id}>
-                                        <th scope="row"><Link to={`/flashcards/${flashcard.id}`}>{flashcard.id}</Link></th>
+                                        <th scope="row"><Link to={`/flashcards/${flashcard.id}`}>{this.state.num++}</Link></th>
                                         <td>{flashcard.title}</td>
                                         <td>{flashcard.body}</td>
                                         <td>{flashcard.favoriteTimestamp}</td>

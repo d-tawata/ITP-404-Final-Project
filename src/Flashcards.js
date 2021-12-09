@@ -13,7 +13,8 @@ export default class Flashcards extends React.Component {
 
         this.state = {
             flashcards: [],
-            isModalOpen: false
+            isModalOpen: false,
+            num: 1
         };
     }
 
@@ -69,10 +70,10 @@ export default class Flashcards extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.flashcards.map((flashcard) => {
+                        {this.state.flashcards.reverse().map((flashcard) => {
                             return (
                                 <tr key={flashcard.id}>
-                                    <th scope="row"><Link to={`/flashcards/${flashcard.id}`}>{flashcard.id}</Link></th>
+                                    <th scope="row"><Link to={`/flashcards/${flashcard.id}`}>{this.state.num++}</Link></th>
                                     <td>{flashcard.title}</td>
                                     <td>{flashcard.body}</td>
                                     <td>
@@ -86,7 +87,7 @@ export default class Flashcards extends React.Component {
                     </tbody>
                 </table>
 
-                <div className="Flashcards">
+                {/* <div className="Flashcards">
                     <button
                         type="button"
                         onClick={() => {
@@ -108,7 +109,7 @@ export default class Flashcards extends React.Component {
                         />
                     )}
                 </div>
-                <div id="modal-container"></div>
+                <div id="modal-container"></div> */}
             </>
         );
     }
