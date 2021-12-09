@@ -10,6 +10,7 @@ import Study from "./Study";
 import CreateFlashcardForm from "./CreateFlashcardForm";
 import EditFlashcardForm from "./EditFlashcardForm";
 import NoMatch from "./NoMatch";
+import Header from "./Header";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./styles.css";
@@ -19,6 +20,7 @@ export default class App extends React.Component {
     return (
       <Router>
         <div className="container">
+          <Header />
           <Navigation />
 
           <Switch>
