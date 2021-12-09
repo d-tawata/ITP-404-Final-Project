@@ -56,6 +56,7 @@ export default class Flashcards extends React.Component {
         return (
             <>
                 <h3>Flashcards</h3>
+                <p>Please refresh after clicking on the bookmark to see the updated icon.</p>
                 <table class="table table-hover">
                     <thead>
                         <tr>

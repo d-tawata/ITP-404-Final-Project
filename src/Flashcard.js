@@ -50,6 +50,7 @@ export default class Flashcard extends React.Component {
     render() {
         return (
             <>
+                <p>Please refresh after clicking on the bookmark to see the updated icon.</p>
                 <div className="row">
                     <div className="col-1">
                         <Bookmark
