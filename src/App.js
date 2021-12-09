@@ -32,7 +32,6 @@ export default class App extends React.Component {
             <Route exact path="/flashcards/:flashcardId" component={Flashcard} />
             <Route exact path="/">
               <Flashcards />
-              {/* <Comments /> */}
             </Route>
             <Route path="*">
               <NoMatch />

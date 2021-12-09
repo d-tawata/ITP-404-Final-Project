@@ -52,21 +52,23 @@ export default class Favorites extends React.Component {
                     <tbody>
                         {this.state.flashcards.reverse().map((flashcard) => {
                             if (flashcard.favorite) {
-                                this.setState({
-                                    num: this.state.num + 1,
-                                });
                                 return (
                                     <tr key={flashcard.id}>
-                                        <th scope="row"><Link to={`/flashcards/${flashcard.id}`}>{this.state.num}</Link></th>
+                                        <th scope="row"><Link to={`/flashcards/${flashcard.id}`}>{this.state.num++}</Link></th>
                                         <td>{flashcard.title}</td>
                                         <td>{flashcard.body}</td>
                                         <td>{flashcard.favoriteTimestamp}</td>
                                     </tr>
                                 );
-                            } else { return <></>; }
+                            } else { return; }
+
                         })}
                     </tbody>
                 </table>
+                <div className="row mt-3">
+                    <img src="https://images.unsplash.com/photo-1577563820627-bc12aa2139de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" className="img-fluid justify-content-center mx-auto col-auto" alt="Pencils on light background"></img>
+                </div>
+
             </>
         );
     }

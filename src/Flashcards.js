@@ -83,29 +83,9 @@ export default class Flashcards extends React.Component {
                     </tbody>
                 </table>
 
-                {/* <div className="Flashcards">
-                    <button
-                        type="button"
-                        onClick={() => {
-                            this.setState({ isModalOpen: true });
-                        }}
-                    >
-                        Open modal
-                    </button>
-
-                    {this.state.isModalOpen && (
-                        <Modal
-                            title="My modal title"
-                            body={() => {
-                                return <p>Modal body text goes here.</p>;
-                            }}
-                            onClose={() => {
-                                this.setState({ isModalOpen: false });
-                            }}
-                        />
-                    )}
+                <div className="row">
+                    <img src="https://images.unsplash.com/photo-1513708929605-6dd0e1b081bd?fit=max&fm=jpg&ixid=MXwzNTY3MHwwfDF8YWxsfHx8fHx8fHw&ixlib=rb-1.2.1&q=75&w=720&utm_medium=referral&utm_source=vocal.media" className="img-fluid justify-content-center mx-auto col-auto" alt="Pencils on dark background"></img>
                 </div>
-                <div id="modal-container"></div> */}
             </>
         );
     }
