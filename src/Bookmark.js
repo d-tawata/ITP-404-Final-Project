@@ -9,6 +9,11 @@ import Modal from "./ModalTerms";
 export default class Bookmark extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            color: "maroon",
+            size: "2x"
+        };
     }
 
     onFavoriteClick() {
@@ -56,8 +61,8 @@ export default class Bookmark extends React.Component {
                 >
                     <FontAwesomeIcon
                         icon={this.props.flashcard.favorite ? faBookmark : farBookmark}
-                        color={this.props.color || "maroon"}
-                        size={this.props.size || "2x"}
+                        color={this.props.color || this.state.color}
+                        size={this.props.size || this.state.size}
                     />
                 </button>
             </>
