@@ -100,14 +100,12 @@ export default class EditFlashcardForm extends React.Component {
                             required
                         />
                     </div>
-
                     <div className="form-check mb-3">
                         <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required />
                         <label className="form-check-label" htmlFor="invalidCheck">
                             Agree to Terms & Conditions.
                         </label>
                     </div>
-
                     <div className="CreateFlashcardForm mb-3">
                         <button
                             type="button"
@@ -135,8 +133,11 @@ export default class EditFlashcardForm extends React.Component {
                     <button type="submit" className="btn btn-dark">
                         Update
                     </button>
+                    <div className="row mt-3">
+                        <img src="https://images.unsplash.com/photo-1512279931422-ae1195527259?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" className="img-fluid justify-content-center mx-auto col-auto" alt="Pencils on light background"></img>
+                    </div>
                 </form>
             </>
         );
-    } asd
+    }
 }
